@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-test
+  namespace: 11lxf-uat
+spec:
+  selector:
+    matchLabels:
+      app: vue-test
+  template:
+    spec:
+      containers:
+        - name: vue-test
+          volumeMounts:
+            - name: nginx-config-volume
+              mountPath: /etc/nginx/conf.d/cover-nginx-conf.conf
+              subPath: cover-nginx-conf.conf
+      volumes:
+        - name: nginx-config-volume
+          configMap:
+            name: nginx-config

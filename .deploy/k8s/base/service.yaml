@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zturn-frontend
+  namespace: 11lxf-uat
+  labels:
+    app: zturn-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: zturn-frontend
+  ports:
+    - name: nginx-http
+      port: 80
+      targetPort: 80
