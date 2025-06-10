@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vue-test
+  name: zturn-frontend
   namespace: 11lxf-uat
 spec:
   selector:
     matchLabels:
-      app: vue-test
+      app: zturn-frontend
   template:
     spec:
       containers:
-        - name: vue-test
+        - name: zturn-frontend
           volumeMounts:
             - name: nginx-config-volume
               mountPath: /etc/nginx/conf.d/cover-nginx-conf.conf
